@@ -46,3 +46,26 @@ View output data
 
 
 As much attention should be given to the intuitive nature of the UI as the structure of the code
+
+
+Undiscussed points to consider:
+-The development year cannot be less then the origin year
+-The incremental value must be a positive value with a maximum of 2 decimal places
+-Can not assume data will be logically clustered and ordered as we have not explicitly told otherwise
+-The Origin and development year must be positive values
+-0's must be displayed appropriately e.g could be at the start, middle or end of a dataset
+
+In the example the output is:
+Comp, 0, 0, 0, 0, 0, 0, 0, 110, 280, 200 
+As the earliest origin year was 1990 and as comp's original year starts from 1992 there are the missing 0 at the start of its output section. 0's will either represent missing data or a claims value.
+-In the example data, all records have atleast 1 or more claims. However I will assume that a record/original year can contain development years that all contain 0's as valid input.
+I believe this will not effect the output.
+
+
+GUI
+-We will assume the user may have a non technical background
+-They must be presented with friendly exceptions when they occur
+-They must be informed when the application is running and has stopped
+-The GUI must not block when executed
+-The user must be informed if the data in the file is valid, also after ever text modification
+-The user should be able to stop an executed application
