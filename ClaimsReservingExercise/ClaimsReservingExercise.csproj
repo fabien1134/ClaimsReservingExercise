@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\InputContentProcessor.cs" />
     <Compile Include="Forms\InputContentModifier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +60,7 @@
     <Compile Include="frmClaimsReservingTool.Designer.cs">
       <DependentUpon>frmClaimsReservingTool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ITextInputValidatingParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\InputContentModifier.resx">
@@ -89,9 +91,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,6 @@
-﻿using ClaimsReservingExercise.Forms;
+﻿using ClaimsReservingExercise.Entities;
+using ClaimsReservingExercise.Forms;
+using ClaimsReservingExercise.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -136,10 +138,17 @@ namespace ClaimsReservingExercise
         private void btnExecute_Click(object sender, EventArgs e)
         {   //Clear previous results
             rtResult.Text = string.Empty;
-
-
-
-
+            try
+            {
+                ITextInputValidatingParser inputContentProcessor = new InputContentProcessor();
+                inputContentProcessor.ParseTextInput(m_inputTextContents);
+            }
+            catch (Exception ex)
+            {
+                const string errorCaption = "Issue during execution";
+                MessageBox.Show(this, ex.Message, errorCaption);
+                DisplayToolStripLabelMessage(errorCaption);
+            }
         }
     }
 }
