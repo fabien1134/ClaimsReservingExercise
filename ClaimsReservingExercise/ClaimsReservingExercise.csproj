@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\InputContentProcessor.cs" />
+    <Compile Include="Entities\TriangleAccumalator.cs" />
     <Compile Include="Forms\InputContentModifier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +61,7 @@
     <Compile Include="frmClaimsReservingTool.Designer.cs">
       <DependentUpon>frmClaimsReservingTool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAccumulator.cs" />
     <Compile Include="Interfaces\ITextInputValidatingParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

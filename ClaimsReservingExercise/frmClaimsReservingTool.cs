@@ -2,13 +2,7 @@
 using ClaimsReservingExercise.Forms;
 using ClaimsReservingExercise.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ClaimsReservingExercise.Forms.InputContentModifier;
@@ -17,7 +11,7 @@ namespace ClaimsReservingExercise
 {
     public partial class frmClaimsReservingTool : Form
     {
-        #region member Variables
+        #region Member Variables
         private string m_inputTextContents = default;
         private InputContentModifier m_inputContentModifier = default;
         #endregion
@@ -141,7 +135,11 @@ namespace ClaimsReservingExercise
             try
             {
                 ITextInputValidatingParser inputContentProcessor = new InputContentProcessor();
-                inputContentProcessor.ParseTextInput(m_inputTextContents);
+                var processedInput = inputContentProcessor.ParseTextInput(m_inputTextContents);
+
+                IAccumulator triangeAccumulator = new TriangleAccumalator();
+                string result = triangeAccumulator.PresentAccumulatedData(processedInput);
+                rtResult.Text = result;
             }
             catch (Exception ex)
             {
